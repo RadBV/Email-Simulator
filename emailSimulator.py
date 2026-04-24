@@ -13,3 +13,7 @@ class Email():
 class User():
     def __init__(self, name):
         self.name = name
+        self.inbox = []
+    
+    def sendEmail(self, receiver, subject, body):
+        email = Email(self, receiver, subject, body)
