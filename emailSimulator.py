@@ -6,8 +6,10 @@ class Email():
         self.subject = subject
         self.body = body
         self.read = False
-        
-emailObj = Email("alice@example.com", "bob@example.com", "Hello", "Hi Bob!")
+    
+    def markAsRead(self):
+        self.read = True
 
-print(emailObj.sender)
-print(emailObj.subject)
+class User():
+    def __init__(self, name):
+        self.name = name
