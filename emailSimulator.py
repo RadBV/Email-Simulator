@@ -46,3 +46,15 @@ class Inbox():
         print("\nYour Emails:")
         for i, email in enumerate(self.emails, 1):
             print(f"{i}. {str(email)}")
+    
+    def readEmails(self, index):
+        if not self.emails:
+            print("Inbox is empty.\n")
+            return
+
+        actualIndex = index - 1
+        if actualIndex < 0 or actualIndex >= len(self.emails):
+            print("Invalid email number.\n")
+            return
+
+        self.emails[actualIndex].displayFullEmail()
