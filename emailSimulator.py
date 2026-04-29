@@ -58,3 +58,18 @@ class Inbox():
             return
 
         self.emails[actualIndex].displayFullEmail()
+
+    def deleteEmail(self, index):
+        if not self.emails:
+            print("Inbox is empty.\n")
+            return
+
+        actualIndex = index - 1
+        if actualIndex < 0 or actualIndex >= len(self.emails):
+            print("Invalid email number.\n")
+            return
+        
+        del self.emails[actualIndex]
+        print("Email deleted.\n")
+
+        
