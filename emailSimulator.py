@@ -38,3 +38,11 @@ class Inbox():
         
     def receiveEmail(self, email):
         self.emails.append(email)
+
+    def listEmails(self):
+        if not self.emails:
+            print("Your inbox is empty.\n")
+            return
+        print("\nYour Emails:")
+        for i, email in enumerate(self.emails, 1):
+            print(f"{i}. {str(email)}")
