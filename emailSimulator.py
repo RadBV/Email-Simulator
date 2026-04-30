@@ -40,6 +40,12 @@ class User():
         print(f"\n{self.name}'s Inbox:")
         self.inbox.listEmails()
 
+    def readEmail(self, index):
+        self.inbox.readEmail(index)
+    
+    def deleteEmail(self, index):
+        self.inbox.deleteEmail(index)
+
 class Inbox():
     def __init__(self):
         self.emails = []
@@ -55,7 +61,7 @@ class Inbox():
         for i, email in enumerate(self.emails, 1):
             print(f"{i}. {str(email)}")
     
-    def readEmails(self, index):
+    def readEmail(self, index):
         if not self.emails:
             print("Inbox is empty.\n")
             return
