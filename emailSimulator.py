@@ -86,4 +86,16 @@ class Inbox():
         del self.emails[actualIndex]
         print("Email deleted.\n")
 
-        
+def main():
+    tory = User("Tory")
+    ramy = User("Ramy")
+
+    tory.sendEmail(ramy, "Hello", "Hi Ramy, just saying hello!")
+    ramy.checkInbox()
+    ramy.readEmail(1)
+    ramy.sendEmail(tory, "Re: Hello", "Hi Tory, hope you are fine.")
+    ramy.deleteEmail(1)
+    ramy.checkInbox()
+
+if __name__ == "__main__":
+    main()
