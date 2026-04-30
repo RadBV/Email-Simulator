@@ -34,7 +34,12 @@ class User():
     def sendEmail(self, receiver, subject, body):
         email = Email(self, receiver, subject, body)
         receiver.inbox.receiveEmail(email)
-        
+        print(f"Email sent from {self.name} to {receiver.name}!\n")
+
+    def checkInbox(self):
+        print(f"\n{self.name}'s Inbox:")
+        self.inbox.listEmails()
+
 class Inbox():
     def __init__(self):
         self.emails = []
